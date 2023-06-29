@@ -12,37 +12,55 @@ import java.util.ArrayList;
  */
 public class OperacionesEstudiantes {
 
-    private ArrayList<Persona> estudiantes;
+    private ArrayList estudiantes;
     private double promedioEdades;
     private int edadminima;
+    private int edadmaxima;
+    private String listaCiudadesEstudiantes;
+    // Una Persona, tiene un atributo ciudad de tipo Ciudad
+    // Una Ciudad, tiene un atributo nombre de tipo String
+
+    
+
+    public void establecerListaCiudadesEstudiantes() {
+        listaCiudadesEstudiantes = obtenerEstudiante().get(0).obtenerCiudad().obtenerNombre();
+        for (int i = 0; i < estudiantes.size(); i++) {
+            System.out.printf("%s\n",estudiantes.get(i));
+
+        }
+    }
+
+    public void establecerEdadMinima() {
+        edadminima = obtenerEstudiante().get(0).obtenerEdad();
+        for (int i = 0; i < estudiantes.size(); i++) {
+
+            if (obtenerEstudiante().get(i).obtenerEdad() < edadminima) {
+                edadminima = obtenerEstudiante().get(i).obtenerEdad();
+            }
+        }
+    }
+
+    public void establecerEdadMaxima() {
+        edadmaxima = obtenerEstudiante().get(0).obtenerEdad();
+        for (int i = 0; i < estudiantes.size(); i++) {
+
+            if (obtenerEstudiante().get(i).obtenerEdad() > edadmaxima) {
+                edadmaxima = obtenerEstudiante().get(i).obtenerEdad();
+            }
+        }
+    }
+
+    public int obtenerEdadMinima() {
+        return edadminima;
+    }
+
+    public int obtenerEdadMaxima() {
+        return edadmaxima;
+    }
 
     public void establecerEstudiante(ArrayList<Persona> lista) {
         estudiantes = lista;
     }
-
-    public void establecerEdadminima(int e) {
-        edadminima = e;
-    }
-
-    public int obtenerEdadminima() {
-        int aux = estudiantes.;
-        for (Persona e : obtenerEstudiante()) {
-            aux = e.obtenerEdad();
-        }
-        for (Persona p : obtenerEstudiante()) {
-            if (p.obtenerEdad() > aux) {
-                aux = p.obtenerEdad();
-            } else {
-                aux = aux;
-            }
-
-           aux=edadminima;
-        }
-     return edadminima;
-    }
-    
-    
-    
 
     public ArrayList<Persona> obtenerEstudiante() {
         return estudiantes;
@@ -59,6 +77,9 @@ public class OperacionesEstudiantes {
     public double obtenerPromedioEdades() {
 
         return promedioEdades;
+    }
+    public String obtenerListaCiudadesEstudiantes() {
+        return listaCiudadesEstudiantes;
     }
 
 }

@@ -7,29 +7,38 @@ package paquete02;
 
 import java.util.ArrayList;
 
+
 public class Principal {
-
     public static void main(String[] args) {
-        Persona persona1 = new Persona("Rene", 39);
-        Persona persona2 = new Persona("Santiago", 20);
-
+        Ciudad c1 = new Ciudad ("Loja");
+        Ciudad c2 = new Ciudad("Madrid");
+        Persona persona1 = new Persona("Rene",39,c1);
+        Persona persona2 = new Persona("Santiago",20,c2);
+        
+        ArrayList<Persona> personas = new ArrayList<>();
+        personas.add(persona1);
+        personas.add(persona2);
+        
+        
         OperacionesEstudiantes op1 = new OperacionesEstudiantes();
-
-        ArrayList<Persona> miLista = new ArrayList<>();
-        miLista.add(persona1);
-        miLista.add(persona2);
-        
-        op1.establecerEstudiante(miLista);
-        
+        op1.establecerEstudiante(personas);
+               
         op1.establecerPromedioEdades();
+        op1.establecerListaCiudadesEstudiantes();
+        
+        
+        System.out.printf("Promedio edades: %.2f",op1.obtenerPromedioEdades());
+        op1.establecerEdadMinima();
+        op1.establecerEdadMaxima();
+        
+   
          
-        
- 
-
-        System.out.printf("%.2f\n", op1.obtenerPromedioEdades());
-         System.out.printf("%d\n", op1.obtenerEdadminima());
-        
-        
-
+         
+         System.out.printf("\nEdad minima: %d",op1.obtenerEdadMinima());
+         System.out.printf("\nEdad maxima: %d",op1.obtenerEdadMaxima());
+         System.out.println("");
+         
+         
+         //System.out.printf("\n%s",op1.obtenerListaCiudadesEstudiantes());
     }
 }
