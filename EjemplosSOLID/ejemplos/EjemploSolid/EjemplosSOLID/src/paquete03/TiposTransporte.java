@@ -14,8 +14,8 @@ public class TiposTransporte {
     private TransporteTaxi ttaxi;
     private TransporteBus ttbus;
     private TransporteTransvia transvia;
-    private TransporteAereo aereo;
-    private TransporteMaritimo maritimo;
+    //private TransporteAereo aereo;
+    //private TransporteMaritimo maritimo;
     
     public void establecerTransporteTaxi(TransporteTaxi taxi){
         ttaxi = taxi;

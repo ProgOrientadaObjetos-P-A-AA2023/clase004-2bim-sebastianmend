@@ -13,6 +13,8 @@ public class Principal {
         bus.establecerCooperativaBus("24 Mayo");
         bus.establecerTarifa();
         
+        
+        
         TransporteTaxi taxi = new TransporteTaxi();
         taxi.establecerCooperativaTaxi("Yahuarcuna");
         taxi.establecerTarifa();
